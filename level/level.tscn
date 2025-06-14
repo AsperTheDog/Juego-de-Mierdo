@@ -1,0 +1,186 @@
+[gd_scene load_steps=11 format=3 uid="uid://crnasqw0u181p"]
+
+[ext_resource type="Texture2D" uid="uid://d3vet60glyk8m" path="res://level/texture_07.png" id="1_5gx2l"]
+[ext_resource type="PackedScene" uid="uid://c0ukf4f341lr8" path="res://controller/player.tscn" id="2_qohg2"]
+
+[sub_resource type="Environment" id="Environment_5xgho"]
+background_mode = 2
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkbyq"]
+albedo_texture = ExtResource("1_5gx2l")
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_vonw3"]
+size = Vector3(20, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oi3di"]
+size = Vector3(20, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5gx2l"]
+size = Vector3(8, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qohg2"]
+size = Vector3(8, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vkbyq"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ktfr2"]
+size = Vector3(5, 1, 5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5xgho")
+
+[node name="terrain" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134315, -0.500001, -0.00206661)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0134315, 1.5, -3.00207)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0134315, 1.5, 2.99793)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0134315, 1.5, 11.9979)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0134315, 1.5, 17.9979)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 15.4866, 1.5, 7.49793)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 9.4866, 1.5, 7.49793)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_5gx2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("BoxShape3D_qohg2")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 12.4866, 1.5, 17.9979)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vkbyq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("BoxShape3D_ktfr2")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 12.4866, 1.5, -3.00207)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vkbyq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("BoxShape3D_ktfr2")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, -10.5134, 1.5, -0.00206757)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vkbyq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D13/StaticBody3D"]
+shape = SubResource("BoxShape3D_ktfr2")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, -10.5134, 1.5, 14.9979)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vkbyq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D14/StaticBody3D"]
+shape = SubResource("BoxShape3D_ktfr2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.4866, -0.500001, 7.49793)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.013401, -0.500001, 14.9979)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.487, 2, 18.427)
+material_override = SubResource("StandardMaterial3D_vkbyq")
+mesh = SubResource("BoxMesh_vonw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_oi3di")
+
+[node name="Player" parent="." instance=ExtResource("2_qohg2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
