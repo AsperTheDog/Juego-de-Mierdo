@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://lomqqhln7tb0"]
+
+[ext_resource type="Script" uid="uid://oll67sdhfxps" path="res://level/components/big_door.gd" id="1_bybkq"]
+[ext_resource type="Texture2D" uid="uid://d3vet60glyk8m" path="res://level/texture_07.png" id="1_eoxsv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bybkq"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("1_eoxsv")
+emission = Color(0.239216, 0, 0, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqvy2"]
+size = Vector3(2.5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qtcj4"]
+size = Vector3(2.5, 1, 5)
+
+[sub_resource type="Animation" id="Animation_eoxsv"]
+resource_name = "action"
+length = 0.5
+step = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D46")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.25, 1.5, 0, 0.5, 1, -2, 1.5, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D47")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1.25, 1.5, 0, 0.5, 1, 2, 1.5, 0)
+
+[sub_resource type="Animation" id="Animation_bybkq"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D46")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.25, 1.5, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D47")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1.25, 1.5, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kqvy2"]
+_data = {
+&"RESET": SubResource("Animation_bybkq"),
+&"action": SubResource("Animation_eoxsv")
+}
+
+[node name="BigDoor" type="Node3D"]
+script = ExtResource("1_bybkq")
+
+[node name="MeshInstance3D46" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -1.74845e-07, 7.64275e-15, 0, -4.37114e-08, -1, 1.74845e-07, 1, -4.37114e-08, -1.25, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_bybkq")
+mesh = SubResource("BoxMesh_kqvy2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D46"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D46/StaticBody3D"]
+shape = SubResource("BoxShape3D_qtcj4")
+
+[node name="MeshInstance3D47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -1.74845e-07, 7.64275e-15, 0, -4.37114e-08, -1, 1.74845e-07, 1, -4.37114e-08, 1.25, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_bybkq")
+mesh = SubResource("BoxMesh_kqvy2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D47/StaticBody3D"]
+shape = SubResource("BoxShape3D_qtcj4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kqvy2")
+}

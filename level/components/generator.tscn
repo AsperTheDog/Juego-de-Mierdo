@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://dumvl5uivjlmr"]
+
+[ext_resource type="Texture2D" uid="uid://d3vet60glyk8m" path="res://level/texture_07.png" id="1_0qxjj"]
+[ext_resource type="Script" uid="uid://bh30sbhlfenx3" path="res://level/components/generator.gd" id="1_nyjk7"]
+[ext_resource type="Script" uid="uid://chrfnltvgjana" path="res://level/components/interact_area.gd" id="3_gbgr5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyjk7"]
+albedo_color = Color(0, 1, 0.166667, 1)
+albedo_texture = ExtResource("1_0qxjj")
+emission = Color(0, 0.176471, 0, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbgr5"]
+size = Vector3(4, 1.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dc33u"]
+size = Vector3(4, 1.5, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0qxjj"]
+size = Vector3(1.785, 0.165, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbgr5"]
+albedo_color = Color(0.992817, 0.0697097, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nyjk7"]
+size = Vector3(0.2, 0.1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wy6uc"]
+size = Vector3(0.25, 0.2, 0.25)
+
+[node name="Generator" type="Node3D"]
+script = ExtResource("1_nyjk7")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -1.74845e-07, 7.64275e-15, 0, -4.37114e-08, -1, 1.74845e-07, 1, -4.37114e-08, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_nyjk7")
+mesh = SubResource("BoxMesh_gbgr5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+shape = SubResource("BoxShape3D_dc33u")
+
+[node name="Screen" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.910138, 0.725544, -0.354184)
+mesh = SubResource("BoxMesh_0qxjj")
+
+[node name="Elements" type="Label3D" parent="Mesh/Screen"]
+transform = Transform3D(1, -1.74845e-07, 1.74845e-07, -1.74845e-07, -4.37114e-08, 1, -1.74845e-07, -1, -4.37114e-08, -0.870353, 0.0831755, -0.481123)
+text = "Lights: Off
+Door 1: Off
+Door 2: Off"
+font_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Tokens" type="Label3D" parent="Mesh/Screen"]
+transform = Transform3D(1, -1.74845e-07, 1.74845e-07, -1.74845e-07, -4.37114e-08, 1, -1.74845e-07, -1, -4.37114e-08, 0.866159, 0.0833356, -0.481123)
+text = "Tokens: 0/2"
+font_size = 20
+horizontal_alignment = 2
+vertical_alignment = 0
+
+[node name="Button" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74023, 0.72554, -0.747465)
+material_override = SubResource("StandardMaterial3D_gbgr5")
+mesh = SubResource("BoxMesh_nyjk7")
+
+[node name="Area3D" type="Area3D" parent="Mesh/Button"]
+collision_layer = 16
+collision_mask = 16
+monitoring = false
+script = ExtResource("3_gbgr5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/Button/Area3D"]
+shape = SubResource("BoxShape3D_wy6uc")

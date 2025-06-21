@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://biokc3hhk4wpu"]
+
+[ext_resource type="Script" uid="uid://b0giv11em1u5j" path="res://level/components/lever.gd" id="1_e65yk"]
+[ext_resource type="Texture2D" uid="uid://d3vet60glyk8m" path="res://level/texture_07.png" id="1_qrvc6"]
+[ext_resource type="Script" uid="uid://chrfnltvgjana" path="res://level/components/interact_area.gd" id="3_yur6x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrvc6"]
+albedo_color = Color(1, 0.783333, 0, 1)
+albedo_texture = ExtResource("1_qrvc6")
+emission = Color(0.203954, 0.203954, 2.40654e-08, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_yur6x"]
+size = Vector3(0.6, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qrvc6"]
+size = Vector3(0.1, 0.5, 0.1)
+
+[sub_resource type="Animation" id="Animation_yur6x"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Lever")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.382683, 0, 0, 0.92388)
+
+[sub_resource type="Animation" id="Animation_e65yk"]
+resource_name = "action"
+length = 0.25
+step = 0.25
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Lever")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.382683, 0, 0, 0.92388, 0.25, 1, 0.382683, -1.14223e-07, -4.73128e-08, 0.92388)
+
+[sub_resource type="Animation" id="Animation_wa4we"]
+resource_name = "jam"
+length = 0.1
+step = 0.05
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Lever")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.382683, 0, 0, 0.92388, 0.05, 1, -0.258819, -2.10846e-08, -8.73354e-09, 0.965926, 0.1, 1, -0.382683, -5.76814e-15, -7.69086e-15, 0.92388)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wa4we"]
+_data = {
+&"RESET": SubResource("Animation_yur6x"),
+&"action": SubResource("Animation_e65yk"),
+&"jam": SubResource("Animation_wa4we")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yur6x"]
+size = Vector3(0.598877, 1.00159, 0.605469)
+
+[node name="Lever" type="Node3D"]
+script = ExtResource("1_e65yk")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -1.74845e-07, 7.64275e-15, 0, -4.37114e-08, -1, 1.74845e-07, 1, -4.37114e-08, 0, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_qrvc6")
+mesh = SubResource("BoxMesh_yur6x")
+skeleton = NodePath("../..")
+
+[node name="Lever" type="Node3D" parent="Base"]
+transform = Transform3D(1, 0, 0, 0, 0.707108, 0.707106, 0, -0.707106, 0.707108, 0, 0, 0)
+
+[node name="Lever" type="MeshInstance3D" parent="Base/Lever"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73132e-08, 0.213407, 0)
+mesh = SubResource("BoxMesh_qrvc6")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wa4we")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+monitoring = false
+script = ExtResource("3_yur6x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000366211, 1.49961, 0.197266)
+shape = SubResource("BoxShape3D_yur6x")

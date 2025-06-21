@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b63bsy2fuyvc3"]
+
+[ext_resource type="Script" uid="uid://2223t4dasex6" path="res://level/components/lights/light.gd" id="1_j71a8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ns8t"]
+albedo_color = Color(0.645551, 2.56296e-06, 4.81307e-07, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_aih4f"]
+size = Vector3(0.2, 0.1, 0.2)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_j71a8")
+emergency = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_1ns8t")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_aih4f")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.37, 0.37, 1)
+light_energy = 0.3
+omni_range = 7.0

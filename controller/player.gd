@@ -50,6 +50,8 @@ extends CharacterBody3D
 @onready var head: Node3D = $Neck/UpperNeck/Head
 @onready var headHeight: float = head.position.y
 
+@onready var lookRay: RayCast3D = $Neck/UpperNeck/Head/Eyes/Camera3D/Look
+
 var direction: Vector3 = Vector3.ZERO
 
 @onready var bobbingIntensity: float = bobbingDefaultIntensity
@@ -59,6 +61,7 @@ var bobbingIndex: float = 0.0
 var sprinting: bool = false
 var crouching: bool = false
 
+var targetTilt: float = 0.0
 var tilt: float = 0.0
 
 func _ready():
@@ -70,14 +73,19 @@ func _input(event: InputEvent):
 		rotate_y(deg_to_rad(-event.relative.x * mouseSensibility))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouseSensibility))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89.9), deg_to_rad(89.9))
-		var targetTilt = 0.0
 		var tiltIntensity = tiltDefaultIntensity
 		if crouching: tiltIntensity *= tiltCrouchIntensityMult
 		elif sprinting: tiltIntensity *= tiltSprintIntensityMult
 		else: tiltIntensity *= tiltWalkIntensityMult
 		targetTilt = clamp(inverse_lerp(0.0, tiltMaxTurn, -event.relative.x), -1.0, 1.0) * tiltIntensity
-		tilt = lerp(tilt, targetTilt, get_physics_process_delta_time() * tiltLerpSpeed)
-		neck.rotation.z = tilt
+	elif event.is_action_pressed("interact"):
+		if lookRay.is_colliding():
+			lookRay.get_collider().trigger()
+
+
+func _process(delta: float):
+	$Control/Point.visible = lookRay.is_colliding() and not Input.is_action_pressed("interact")
+	$Control/Hand.visible = lookRay.is_colliding() and Input.is_action_pressed("interact")
 
 
 func _physics_process(delta: float) -> void:
@@ -127,6 +135,9 @@ func _physics_process(delta: float) -> void:
 		eyes.position.x = lerp(eyes.position.x, bobbingVector.x * bobbingIntensity * bobbingFinalAxisMult, delta * bobbingLerpSpeed)
 		upperNeck.rotation.z = lerp(upperNeck.rotation.z, -(bobbingVector.x - 0.5) * bobbingTiltEnableMult * bobbingTiltIntensity, delta * bobbingLerpSpeed)
 	
+	tilt = lerp(tilt, targetTilt, get_physics_process_delta_time() * tiltLerpSpeed)
+	neck.rotation.z = tilt
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
