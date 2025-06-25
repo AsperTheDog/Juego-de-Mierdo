@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2qefr38rxiuf"]
+
+[ext_resource type="PackedScene" uid="uid://co4aphy1axp8u" path="res://assets/Models/Developer/sewer-basic-small.glb" id="1_pt3ao"]
+[ext_resource type="Material" uid="uid://wevf2m1ss807" path="res://assets/Materials/developed-interactive-material.tres" id="2_pt3ao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tey3n"]
+size = Vector3(1.76758, 0.0352173, 0.999756)
+
+[node name="sewer-basic-small" instance=ExtResource("1_pt3ao")]
+
+[node name="sewer-basic-small" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pt3ao")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="sewer-basic-small" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sewer-basic-small/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0175476, 0)
+shape = SubResource("BoxShape3D_tey3n")

@@ -44,7 +44,7 @@ extends CharacterBody3D
 @onready var neck: Node3D = $Neck
 @onready var upperNeck: Node3D = $Neck/UpperNeck
 @onready var eyes: Node3D = $Neck/UpperNeck/Head/Eyes
-@onready var rayCast3D: RayCast3D = $RayCast3D
+@onready var crouchCast: RayCast3D = $RayCast3D
 @onready var standingCollision: CollisionShape3D = $StandingCollision
 @onready var crouchingCollision: CollisionShape3D = $CrouchingCollision
 @onready var head: Node3D = $Neck/UpperNeck/Head
@@ -66,6 +66,7 @@ var tilt: float = 0.0
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	crouchCast.position.y = eyes.global_position.y - global_position.y + crouchingDepth
 
 
 func _input(event: InputEvent):
@@ -95,7 +96,7 @@ func _physics_process(delta: float) -> void:
 	crouching = false
 	var nextBobbingIndex = bobbingIndex
 	var bobbingTiltIntensity = bobbingDefaultTiltIntensity
-	if Input.is_action_pressed("crouch") or rayCast3D.is_colliding():
+	if Input.is_action_pressed("crouch") or crouchCast.is_colliding():
 		speed = defaultSpeed * crouchingMult
 		head.position.y = lerp(head.position.y, headHeight + crouchingDepth, delta * crouchSpeed)
 		standingCollision.disabled = true

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd6qp1q70uqv3"]
+
+[ext_resource type="PackedScene" uid="uid://ypnth3fa1yoq" path="res://Assets/Models/Developer/respawn-basic.glb" id="1_f826t"]
+[ext_resource type="Material" uid="uid://wevf2m1ss807" path="res://Assets/Materials/developed-interactive-material.tres" id="2_xk5bm"]
+[ext_resource type="Material" uid="uid://du6658dax5db5" path="res://Assets/Materials/developed-emissive-material.tres" id="3_xk5bm"]
+
+[node name="respawn-basic" instance=ExtResource("1_f826t")]
+
+[node name="respawn-basic" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xk5bm")
+surface_material_override/1 = ExtResource("3_xk5bm")

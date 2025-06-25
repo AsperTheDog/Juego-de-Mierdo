@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bomyi1nhj2vsg"]
+
+[ext_resource type="PackedScene" uid="uid://c5b63nb4ilgc5" path="res://Assets/Models/Developer/wall-column.glb" id="1_diax5"]
+[ext_resource type="Material" uid="uid://epo4uxkbas2w" path="res://Assets/Materials/developed-material.tres" id="2_salog"]
+
+[node name="wall-column" instance=ExtResource("1_diax5")]
+
+[node name="wall-column" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_salog")

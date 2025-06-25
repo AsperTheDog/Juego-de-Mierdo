@@ -1030,7 +1030,7 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Terrain/MeshInstance3D16"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Terrain/MeshInstance3D16/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165253, 0, 0.0891647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165253, 0, 0.0170288)
 shape = SubResource("BoxShape3D_oi3di")
 
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="Level/Terrain"]
@@ -1267,6 +1267,9 @@ displayName = "Lights"
 
 [node name="Light" parent="Level/Lever2/Lights" instance=ExtResource("6_ivpvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3474, 6.97391, 22.8893)
+
+[node name="Light12" parent="Level/Lever2/Lights" instance=ExtResource("6_ivpvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23807, 6.97391, 15.0099)
 
 [node name="Light4" parent="Level/Lever2/Lights" instance=ExtResource("6_ivpvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3474, 6.97391, 22.8893)

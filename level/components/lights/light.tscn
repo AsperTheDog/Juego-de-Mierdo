@@ -20,4 +20,5 @@ mesh = SubResource("BoxMesh_aih4f")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_energy = 8.0
+shadow_enabled = true
 omni_range = 10.0

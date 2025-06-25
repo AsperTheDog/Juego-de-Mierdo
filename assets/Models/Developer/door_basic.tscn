@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc6fi2058cuw4"]
+
+[ext_resource type="PackedScene" uid="uid://djsffshd4v7cn" path="res://Assets/Models/Developer/door-basic.glb" id="1_nd0cv"]
+[ext_resource type="Material" uid="uid://wevf2m1ss807" path="res://Assets/Materials/developed-interactive-material.tres" id="2_nd0cv"]
+
+[node name="door-basic" instance=ExtResource("1_nd0cv")]
+
+[node name="door-basic" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nd0cv")

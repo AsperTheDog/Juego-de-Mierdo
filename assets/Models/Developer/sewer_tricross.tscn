@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blni4glf0u2aa"]
+
+[ext_resource type="PackedScene" uid="uid://dvt4pd7ubegk7" path="res://assets/Models/Developer/sewer-tricross.glb" id="1_qxqyp"]
+[ext_resource type="Material" uid="uid://wevf2m1ss807" path="res://assets/Materials/developed-interactive-material.tres" id="2_qxqyp"]
+
+[node name="sewer-sewer-tricross" instance=ExtResource("1_qxqyp")]
+
+[node name="sewer-tricross" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qxqyp")
+surface_material_override/1 = ExtResource("2_qxqyp")

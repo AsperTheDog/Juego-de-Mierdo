@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0vtxibs0klmg"]
+
+[ext_resource type="PackedScene" uid="uid://bx33ec2q3mwhc" path="res://Assets/Models/Developer/wall-top.glb" id="1_mm4fr"]
+[ext_resource type="Material" uid="uid://epo4uxkbas2w" path="res://Assets/Materials/developed-material.tres" id="2_61e0d"]
+
+[node name="wall-top" instance=ExtResource("1_mm4fr")]
+
+[node name="wall-top" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_61e0d")

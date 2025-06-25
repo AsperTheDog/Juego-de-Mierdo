@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3r8a4epqm3rl"]
+
+[ext_resource type="PackedScene" uid="uid://bp00dwxy3a1fx" path="res://Assets/Models/Developer/sewer-cross.glb" id="1_3lj2d"]
+[ext_resource type="Material" uid="uid://wevf2m1ss807" path="res://Assets/Materials/developed-interactive-material.tres" id="2_tty2b"]
+
+[node name="sewer-cross" instance=ExtResource("1_3lj2d")]
+
+[node name="sewer-cross" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_tty2b")
+surface_material_override/1 = ExtResource("2_tty2b")

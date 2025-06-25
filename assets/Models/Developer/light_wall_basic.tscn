@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci5566obpkvfo"]
+
+[ext_resource type="PackedScene" uid="uid://cennqfo2fva7m" path="res://Assets/Models/Developer/light-wall-basic.glb" id="1_m02cd"]
+[ext_resource type="Material" uid="uid://du6658dax5db5" path="res://Assets/Materials/developed-emissive-material.tres" id="2_wtaps"]
+
+[node name="light-wall-basic" instance=ExtResource("1_m02cd")]
+
+[node name="light-wall-basic" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_wtaps")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471716, 2.74191, 0)
+light_color = Color(1, 0.968627, 0.933333, 1)
+light_energy = 10.0
+shadow_enabled = true
+omni_attenuation = 2.0

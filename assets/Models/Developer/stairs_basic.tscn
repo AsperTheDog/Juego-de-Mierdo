@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://6wyaglu2q4br"]
+
+[ext_resource type="PackedScene" uid="uid://ddugh4u34jynh" path="res://Assets/Models/Developer/stairs-basic.glb" id="1_tw10f"]
+[ext_resource type="Material" uid="uid://epo4uxkbas2w" path="res://Assets/Materials/developed-material.tres" id="2_qkx61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tw10f"]
+size = Vector3(5.21576, 0.244629, 1.98242)
+
+[node name="stairs-basic" instance=ExtResource("1_tw10f")]
+
+[node name="stairs-basic" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qkx61")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stairs-basic" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stairs-basic/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 1.99208, 1.75259, 0)
+shape = SubResource("BoxShape3D_tw10f")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd3n47pdo4bnb"]
+
+[sub_resource type="Environment" id="Environment_teqg7"]
+background_energy_multiplier = 0.0
+tonemap_mode = 2
+tonemap_exposure = 0.75
+tonemap_white = 5.0
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0626
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[node name="Enviroment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_teqg7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.995396, -0.0861456, -0.042016, 0, -0.438371, 0.898794, -0.0958458, -0.894656, -0.436353, 0, 0, 0)
+light_color = Color(1, 0.972549, 0.929412, 1)
+shadow_enabled = true

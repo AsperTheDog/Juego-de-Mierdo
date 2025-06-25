@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mxw406x2a40k"]
+
+[ext_resource type="PackedScene" uid="uid://h3f52mvktc4r" path="res://Assets/Models/Developer/floor-basic-small.glb" id="1_rdkqt"]
+[ext_resource type="Material" uid="uid://epo4uxkbas2w" path="res://Assets/Materials/developed-material.tres" id="2_cdjvv"]
+
+[node name="floor-basic-small" instance=ExtResource("1_rdkqt")]
+
+[node name="floor-basic-small" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_cdjvv")

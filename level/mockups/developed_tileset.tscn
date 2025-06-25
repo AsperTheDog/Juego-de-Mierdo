@@ -1,0 +1,55 @@
+[gd_scene load_steps=18 format=3 uid="uid://u08i1x3siusv"]
+
+[ext_resource type="PackedScene" uid="uid://cc6fi2058cuw4" path="res://assets/Models/Developer/door_basic.tscn" id="1_lrbum"]
+[ext_resource type="PackedScene" uid="uid://d36hibt0fkoag" path="res://assets/Models/Developer/floor_basic.tscn" id="2_lww3d"]
+[ext_resource type="PackedScene" uid="uid://ci5566obpkvfo" path="res://assets/Models/Developer/light_wall_basic.tscn" id="3_ptjl8"]
+[ext_resource type="PackedScene" uid="uid://cd6qp1q70uqv3" path="res://assets/Models/Developer/respawn_basic.tscn" id="4_1m06g"]
+[ext_resource type="PackedScene" uid="uid://6wyaglu2q4br" path="res://assets/Models/Developer/stairs_basic.tscn" id="5_66d37"]
+[ext_resource type="PackedScene" uid="uid://btcb7tivkh1lh" path="res://assets/Models/Developer/wall_basic.tscn" id="6_m7jtg"]
+[ext_resource type="PackedScene" uid="uid://jiqqpt4imvjj" path="res://assets/Models/Developer/wall_door.tscn" id="7_oclfv"]
+[ext_resource type="PackedScene" uid="uid://mxw406x2a40k" path="res://assets/Models/Developer/floor_basic_small.tscn" id="8_lww3d"]
+[ext_resource type="PackedScene" uid="uid://ike8uvb60o5" path="res://assets/Models/Developer/wall_basic_small.tscn" id="9_66d37"]
+[ext_resource type="PackedScene" uid="uid://bomyi1nhj2vsg" path="res://assets/Models/Developer/wall_column.tscn" id="10_m7jtg"]
+[ext_resource type="PackedScene" uid="uid://c0vtxibs0klmg" path="res://assets/Models/Developer/wall_top.tscn" id="11_oclfv"]
+[ext_resource type="PackedScene" uid="uid://b2qefr38rxiuf" path="res://assets/Models/Developer/sewer_basic_small.tscn" id="12_oclfv"]
+[ext_resource type="PackedScene" uid="uid://bj102qa6vppik" path="res://assets/Models/Developer/sewer_basic.tscn" id="13_aueaj"]
+[ext_resource type="PackedScene" uid="uid://1uohtt482k2y" path="res://assets/Models/Developer/sewer_curve.tscn" id="14_4vxmy"]
+[ext_resource type="PackedScene" uid="uid://blni4glf0u2aa" path="res://assets/Models/Developer/sewer_tricross.tscn" id="15_xqgy0"]
+[ext_resource type="PackedScene" uid="uid://busyjktcncl70" path="res://assets/Models/Developer/wall_sewer.tscn" id="16_dymyp"]
+[ext_resource type="PackedScene" uid="uid://d3r8a4epqm3rl" path="res://assets/Models/Developer/sewer_cross.tscn" id="17_xqgy0"]
+
+[node name="Developed-tileset" type="Node3D"]
+
+[node name="01-door-basic" parent="." instance=ExtResource("1_lrbum")]
+
+[node name="02-floor-basic" parent="." instance=ExtResource("2_lww3d")]
+
+[node name="03-light-wall-basic" parent="." instance=ExtResource("3_ptjl8")]
+
+[node name="04-respawn-basic" parent="." instance=ExtResource("4_1m06g")]
+
+[node name="05-stairs-basic" parent="." instance=ExtResource("5_66d37")]
+
+[node name="06-wall-basic" parent="." instance=ExtResource("6_m7jtg")]
+
+[node name="07-wall-door" parent="." instance=ExtResource("7_oclfv")]
+
+[node name="08-floor-basic-small" parent="." instance=ExtResource("8_lww3d")]
+
+[node name="09-wall-basic-small" parent="." instance=ExtResource("9_66d37")]
+
+[node name="10-wall-column" parent="." instance=ExtResource("10_m7jtg")]
+
+[node name="11-wall-top" parent="." instance=ExtResource("11_oclfv")]
+
+[node name="12-sewer-basic-small" parent="." instance=ExtResource("12_oclfv")]
+
+[node name="13-sewer-basic" parent="." instance=ExtResource("13_aueaj")]
+
+[node name="14-sewer-curve" parent="." instance=ExtResource("14_4vxmy")]
+
+[node name="15-sewer-tricross" parent="." instance=ExtResource("15_xqgy0")]
+
+[node name="16-wall-sewer" parent="." instance=ExtResource("16_dymyp")]
+
+[node name="17-sewer-cross" parent="." instance=ExtResource("17_xqgy0")]
