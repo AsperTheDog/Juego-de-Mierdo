@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqnv1bgbpu7gn"]
+
+[ext_resource type="Script" uid="uid://lrq2gkqc22iu" path="res://creature/creature.gd" id="1_axx3x"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pmhii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axx3x"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pf7sp"]
+radius = 0.1
+height = 0.2
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_axx3x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_pmhii")
+
+[node name="Head" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.496728)
+material_override = SubResource("StandardMaterial3D_axx3x")
+mesh = SubResource("SphereMesh_pf7sp")

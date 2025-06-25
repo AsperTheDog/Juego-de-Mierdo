@@ -17,6 +17,23 @@ size = Vector3(2.5, 1, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qtcj4"]
 size = Vector3(2.5, 1, 5)
 
+[sub_resource type="Animation" id="Animation_bybkq"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D46")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.25, 1.5, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D47")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1.25, 1.5, 0)
+
 [sub_resource type="Animation" id="Animation_eoxsv"]
 resource_name = "action"
 length = 0.5
@@ -35,23 +52,6 @@ tracks/1/path = NodePath("MeshInstance3D47")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 1.25, 1.5, 0, 0.5, 1, 2, 1.5, 0)
-
-[sub_resource type="Animation" id="Animation_bybkq"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D46")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -1.25, 1.5, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D47")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1.25, 1.5, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kqvy2"]
 _data = {
